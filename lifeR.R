@@ -74,6 +74,7 @@ runSim <- function(width=10,height=width,density=0.2) {
   }
 }
 
+library(RUnit)
 testsuite.c2f <- defineTestSuite("c2f", 
                                  dirs=file.path("./"), 
                                  testFileRegexp = "^runit.+\\.R", 

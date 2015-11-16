@@ -7,3 +7,7 @@ I realised I didn't know how to do it in my current main language, R! That has b
 and this is on GitHub for all the people who said "R? What's that?" as a minimal example of the language.
 
 Shout out to Rookie Oven, as well as @dthjones and @jamesmaciver who showed me some of the magic of TDD
+
+## Install
+
+If you have `R`, then you also need to `install.packages("RUnit")`, then source("lifeR.R") to load the program and run the tests, and finally `runSim()` to see those automata flood across your screen!

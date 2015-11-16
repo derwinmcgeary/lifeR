@@ -1,10 +1,11 @@
 ######################################################3
 # Game of Life in R
-# Unit testing is in the other file
+# Unit testing is runitlifeR.R
 # I have set the tests to be the only thing which runs by default,
 # which means that "Source on Save" runs them every time I save in RStudio
 # Use > runSim() to play it
-# For those not used to R, the last thing returned in a function is the return value of the function
+# For those not used to R, the last thing returned in a
+# function is the return value of the function
 # So createRandomGrid() returns a matrix, for example
 
 createRandomGrid <- function(width=10, height=width, density=0.2) {
@@ -75,6 +76,14 @@ runSim <- function(width=10,height=width,density=0.2) {
 }
 
 library(RUnit)
+#############################################
+# defineTestSuite() creates an object, hoovering
+# all files from "./" which begin with "runit"
+# and end with ".R" and runs all functions
+# named test* from those files (plus
+# some rng settings which don't matter for us)
+#############################################
+
 testsuite.lifeR <- defineTestSuite("lifeR", 
                                  dirs=file.path("./"), 
                                  testFileRegexp = "^runit.+\\.R", 
@@ -82,4 +91,5 @@ testsuite.lifeR <- defineTestSuite("lifeR",
                                  rngKind="Marsaglia-Multicarry", 
                                  rngNormalKind="Kinderman-Ramage")
 
+# And then we run the suite and print the result!
 printTextProtocol(runTestSuite(testsuite.lifeR))
